@@ -1,0 +1,19 @@
+name: Kike 27 Github Workflow
+on:
+  push:
+    branches:
+      - main
+
+env:
+  PROJECT_NAME: githubactions-kike27
+  COURSE: MLOps Udemy
+
+jobs:
+  example_job: 
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Checkout the Repo"
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - run: printenv
+      - run: echo "This is the env var ${{ env.PROJECT_NAME}} and env var ${{ env.COURSE }}"
